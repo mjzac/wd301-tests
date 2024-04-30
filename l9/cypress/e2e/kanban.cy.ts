@@ -84,7 +84,7 @@ describe("After signing in, and navigating to the ", () => {
 
 
     cy.visit(studentSubmissionUrl + "/account/projects");
-
+    cy.wait(300);
     cy.get(".suspense-loading").should("be.visible");
   });
 
@@ -92,7 +92,7 @@ describe("After signing in, and navigating to the ", () => {
     
 
     cy.visit(studentSubmissionUrl + "/account/members");
-
+    cy.wait(300);
     cy.get(".suspense-loading").should("be.visible");
   });
 });

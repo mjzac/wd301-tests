@@ -82,17 +82,17 @@ describe("After signing in, and navigating to the ", () => {
 
   it("`/account/projects` path, the `ProjectList` component should have suspense implemented, rendering a `div` with class `suspense-loading`", () => {
 
-
     cy.visit(studentSubmissionUrl + "/account/projects");
-    cy.wait(300);
-    cy.get(".suspense-loading").should("be.visible");
+    cy.get(".suspense-loading").should("exist");
+    cy.wait(800);
+    cy.get(".suspense-loading").should("not.exist");
   });
 
   it("`/account/members` path, the `MemberList` component should have suspense implemented rendering a `div` with class `suspense-loading`", () => {
-    
 
     cy.visit(studentSubmissionUrl + "/account/members");
-    cy.wait(300);
-    cy.get(".suspense-loading").should("be.visible");
+    cy.get(".suspense-loading").should("exist");
+    cy.wait(800);
+    cy.get(".suspense-loading").should("not.exist");
   });
 });

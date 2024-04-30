@@ -81,9 +81,7 @@ describe("After signing in, and navigating to the ", () => {
   });
 
   it("`/account/projects` path, the `ProjectList` component should have suspense implemented, rendering a `div` with class `suspense-loading`", () => {
-    cy.intercept("GET", "http://localhost:3001/projects", (req) => {
-      cy.wait(2000);
-    }).as("getProjects");
+
 
     cy.visit(studentSubmissionUrl + "/account/projects");
 
@@ -91,9 +89,7 @@ describe("After signing in, and navigating to the ", () => {
   });
 
   it("`/account/members` path, the `MemberList` component should have suspense implemented rendering a `div` with class `suspense-loading`", () => {
-    cy.intercept("GET", "http://localhost:3001/users", (req) => {
-      cy.wait(2000);
-    }).as("getUsers");
+    
 
     cy.visit(studentSubmissionUrl + "/account/members");
 
